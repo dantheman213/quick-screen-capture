@@ -3,14 +3,13 @@ package main
 import (
 	"github.com/JamesHovious/w32"
 	"github.com/dantheman213/quick-screen-capture/pkg/hotkeys"
+	"github.com/dantheman213/quick-screen-capture/pkg/screen"
 )
 
 func main() {
 	_ = hotkeys.Register()
 	_ = waitForInputLoop()
 }
-
-
 
 func waitForInputLoop() (err error) {
 	var msg w32.MSG
@@ -22,7 +21,7 @@ func waitForInputLoop() (err error) {
 		switch msg.Message {
 		case w32.WM_HOTKEY:
 			if msg.WParam == 1 {
-				w32.MessageBox(0, "Event occurred!", "Event", w32.MB_ICONASTERISK)
+				screen.InitCaptureWindow()
 			}
 		}
 	}
