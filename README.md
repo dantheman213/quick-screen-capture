@@ -17,3 +17,7 @@ TODO
 Build with the following arguments to produce the best binary for Windows.
 
     -i -ldflags -H=windowsgui
+
+## Reference
+
+https://docs.microsoft.com/en-us/windows/win32/api
