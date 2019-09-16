@@ -32,7 +32,7 @@ func winMain() int {
 
     hWnd := w32.CreateWindowEx(
         0, lpszClassName, syscall.StringToUTF16Ptr("Capture"),
-        w32.WS_OVERLAPPEDWINDOW | w32.WS_VISIBLE,
+        w32.WS_VISIBLE | w32.WS_POPUP | w32.WS_EX_TOOLWINDOW,
         w32.CW_USEDEFAULT, w32.CW_USEDEFAULT, 400, 400, 0, 0, hInstance, nil)
 
     w32.ShowWindow(hWnd, w32.SW_SHOWDEFAULT)
